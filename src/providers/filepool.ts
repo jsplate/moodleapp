@@ -1280,6 +1280,11 @@ export class CoreFilepoolProvider {
         let promise;
         let alreadyDownloaded = true;
 
+        /* tslint:disable no-console */
+        console.log('downloadUrl url before: ', fileUrl);
+        fileUrl = (<any> window).Ionic.WebView.convertFileSrc(fileUrl);
+        console.log('downloadUrl url after:', fileUrl);
+
         if (this.fileProvider.isAvailable()) {
             return this.fixPluginfileURL(siteId, fileUrl).then((file) => {
 

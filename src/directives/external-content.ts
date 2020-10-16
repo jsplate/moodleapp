@@ -251,6 +251,10 @@ export class CoreExternalContentDirective implements AfterViewInit, OnChanges {
             finalUrl = finalUrl + '#moodlemobile-embedded';
         }
 
+        // /* tslint:disable no-console */
+        // JSP: console.log('handleExternalContent url before: ', finalUrl);
+        // JSP: finalUrl = (<any> window).Ionic.WebView.convertFileSrc(finalUrl);
+        // JSP: console.log('handleExternalContent url after:', finalUrl);
         this.logger.debug('Using URL ' + finalUrl + ' for ' + url);
         if (tagName === 'SOURCE') {
             // The browser does not catch changes in SRC, we need to add a new source.
